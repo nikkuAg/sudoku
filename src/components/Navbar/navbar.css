@@ -1,0 +1,13 @@
+.navbar{
+    display: flex;
+    align-items: baseline;
+    justify-content: space-around;
+}
+.rules{
+    font-size: 1.5em;
+    padding: 0.5rem;
+}
+.rules:hover{
+    background-color: rgb(201, 217, 230);
+    border-radius: 0.5rem;
+}
