@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { useNavigate } from 'react-router-dom'
 import Box from '@mui/material/Box'
 import InputLabel from '@mui/material/InputLabel'
 import MenuItem from '@mui/material/MenuItem'
@@ -8,6 +9,7 @@ import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
 import CardMedia from '@mui/material/CardMedia'
 import { CardActionArea } from '@mui/material'
+import Button from '@mui/material/Button'
 import img from '../../resources/sudoku.png'
 import './settings.css'
 
@@ -22,10 +24,15 @@ export const Settings = () => {
   const handleDifficulty = (event) => {
     setDifficulty(event.target.value)
   }
+  let navigate = useNavigate()
+
+  const startGame = () => {
+    let path = "/game/" + dimension + "/" + difficulty
+    navigate(path)
+  }
 
   return (
     <Card className='setting' sx={{maxWidth: 450}}>
-      <CardActionArea>
         <CardMedia
           component="img"
           height="200"
@@ -67,8 +74,8 @@ export const Settings = () => {
               </Select>
             </FormControl>
           </Box>
+          <Button variant="contained" onClick={startGame}>Start Game</Button>
         </CardContent>
-      </CardActionArea>
     </Card>
   )
 }

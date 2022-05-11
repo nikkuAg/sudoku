@@ -10,4 +10,5 @@
 .rules:hover{
     background-color: rgb(201, 217, 230);
     border-radius: 0.5rem;
+    cursor: pointer;
 }

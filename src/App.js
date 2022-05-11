@@ -1,12 +1,18 @@
-import { Settings } from './components/Game settings/settings';
-import { Navbar } from './components/Navbar/Navbar';
+import { BrowserRouter as Router, Routes, 
+  Route} from "react-router-dom";
+import { Game } from "./components/Game/Game";
+import { Home } from "./components/Home";
 
 function App() {
   return (
-    <div className="App">
-        <Navbar />
-        <Settings />
-    </div>
+    <>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/game/:grid/:diff" element={<Game />} />
+        </Routes>        
+      </Router>
+    </>
   );
 }
 
