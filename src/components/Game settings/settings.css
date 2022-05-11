@@ -1,0 +1,11 @@
+.setting{
+    margin: auto;
+    margin-top: 5rem;
+}
+.sudoku-image{
+    width: auto !important;
+    margin: 0.5rem auto;
+}
+.MuiBox-root{
+    margin: 1rem auto;
+}
