@@ -3,6 +3,9 @@
     align-items: baseline;
     justify-content: space-around;
 }
+.home{
+    cursor: pointer;
+}
 .rules{
     font-size: 1.5em;
     padding: 0.5rem;

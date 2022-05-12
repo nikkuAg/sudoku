@@ -8,7 +8,6 @@ import Select from '@mui/material/Select'
 import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
 import CardMedia from '@mui/material/CardMedia'
-import { CardActionArea } from '@mui/material'
 import Button from '@mui/material/Button'
 import img from '../../resources/sudoku.png'
 import './settings.css'
@@ -54,7 +53,6 @@ export const Settings = () => {
                 <MenuItem value={4}>Sudoku 4 X 4</MenuItem>
                 <MenuItem value={6}>Sudoku 6 X 6</MenuItem>
                 <MenuItem value={9}>Sudoku 9 X 9</MenuItem>
-                <MenuItem value={16}>Sudoku 16 X 16</MenuItem>
               </Select>
             </FormControl>
           </Box>

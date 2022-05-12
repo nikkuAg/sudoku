@@ -1,0 +1,41 @@
+.css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root{
+    width: 3rem;
+    height: 3rem;
+    border-radius: 0% !important;
+}
+.css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input{
+    text-align: center;
+    padding: 0px !important;
+}
+.sudoku{
+    border: 0.15rem solid black;
+    margin: 2rem;
+}
+.row{
+    display: flex;
+    height: 3rem;
+}
+.input{
+    width:3rem;
+}
+.input>form{
+    margin: 0px;
+}
+.input>form>div{
+    margin: 0px;
+}
+#form-box>div>div>fieldset{
+    border-color: black;
+}
+.add-border>div>div>fieldset{
+    border-right-width: 3px ;
+}
+.add-lowerborder>div>div>fieldset{
+    border-bottom-width: 3px ;
+}
+.add-topborder>div>div>fieldset{
+    border-top-width: 3px ;
+}
+.add-leftborder>div>div>fieldset{
+    border-left-width: 3px ;
+}
