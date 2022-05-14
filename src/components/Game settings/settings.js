@@ -9,19 +9,99 @@ import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
 import CardMedia from '@mui/material/CardMedia'
 import Button from '@mui/material/Button'
-import img from '../../resources/sudoku.png'
+import e9 from '../../resources/9e.png'
+import m9 from '../../resources/9m.png'
+import h9 from '../../resources/9h.png'
+import e6 from '../../resources/6e.png'
+import m6 from '../../resources/6m.png'
+import h6 from '../../resources/6h.png'
+import e4 from '../../resources/4e.png'
+import h4 from '../../resources/4h.png'
 import './settings.css'
 
 export const Settings = () => {
   const [dimension, setDimension] = React.useState(9)
   const [difficulty, setDifficulty] = React.useState("easy")
+  const [img, setimg] = React.useState(e9)
 
   const handleDimension = (event) => {
     setDimension(event.target.value)
+    if(difficulty == "easy"){
+      switch (event.target.value) {
+        case 9:
+          setimg(e9)
+          break;
+        case 4:
+          setimg(e4)
+          break;
+        case 6:
+          setimg(e6)
+          break;
+      }
+    }
+    else if(difficulty == "medium"){
+      switch (event.target.value) {
+        case 9:
+          setimg(m9)
+          break;
+        case 6:
+          setimg(m6)
+          break;
+      }
+    }
+    else if(difficulty == "hard"){
+      switch (event.target.value) {
+        case 9:
+          setimg(h9)
+          break;
+        case 4:
+          setimg(h4)
+          break;
+        case 6:
+          setimg(h6)
+          break;
+      }
+    }
   }
 
   const handleDifficulty = (event) => {
     setDifficulty(event.target.value)
+    if(dimension == 9){
+      switch (event.target.value) {
+        case "easy":
+          setimg(e9)
+          break;
+        case "medium":
+          setimg(m9)
+          break;
+        case "hard":
+          setimg(h9)
+          break;
+      }
+    }
+    else if(dimension == 4){
+      switch (event.target.value) {
+        case "easy":
+          setimg(e4)
+          break;
+        case "hard":
+          setimg(h4)
+          break;
+      }
+    }
+    else if(dimension == 6){
+      switch (event.target.value) {
+        case "easy":
+          setimg(e6)
+          break;
+        case "medium":
+          setimg(m6)
+          break;
+        case "hard":
+          setimg(h6)
+          break;
+      }
+    }
   }
   let navigate = useNavigate()
 
