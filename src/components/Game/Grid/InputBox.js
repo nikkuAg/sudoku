@@ -7,8 +7,8 @@ export const InputBox = ({value, border, lowerBorder, topBorder, leftBorder}) =>
     const temp2 = lowerBorder=="yes" ? "add-lowerborder" : ""
     const temp3 = topBorder=="yes" ? "add-topborder" : ""
     const temp4 = leftBorder=="yes" ? "add-leftborder" : ""
-
     const myclass = temp1 + " " + temp2 + " " + temp3 + " " + temp4
+    
   return (
     <div className="input">
         <Box
