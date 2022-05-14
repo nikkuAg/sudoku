@@ -11,8 +11,7 @@ export const Game = () => {
   return (
     <>
       <Navbar />
-      <Grid dimension={grid} />
-      <p>{difficulty}</p>
+      <Grid dimension={grid} difficulty={difficulty} />
     </>
   )
 }

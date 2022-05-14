@@ -4,15 +4,16 @@ import LoadingButton from '@mui/lab/LoadingButton'
 import { InputBox } from './InputBox'
 import './grid.css'
 
-export const Grid = ({dimension}) => {
+export const Grid = ({dimension, difficulty}) => {
     let numberList = []
+    const [sudokuNumbersSol, setsudokuNumbersSol] = useState([])
     const [sudokuNumbers, setsudokuNumbers] = useState([])
     for (let i = 1; i <= dimension; i++) {
         numberList.push(i)
     }
 
     useEffect(() => {
-      SudokuGrid(setsudokuNumbers, dimension)
+      SudokuGrid(setsudokuNumbersSol, setsudokuNumbers, dimension, difficulty)
     }, [])
     
     return (
@@ -28,7 +29,7 @@ export const Grid = ({dimension}) => {
                                         {row.map((column,j) => {
                                             let columnBorder = dimension==4 ? 2 : 3
                                             let rowBorder = dimension==9 ? 3 : 2
-                                            return <InputBox key={j} value={column} border={j%columnBorder == columnBorder-1 ? "yes" : "no"} lowerBorder={i%rowBorder==rowBorder-1 ? "yes" : "no"} topBorder={i==0 ? "yes" : "no"} leftBorder={j==0 ? "yes" : "no"} />
+                                            return <InputBox key={j} value={column != 0 ? column : null} border={j%columnBorder == columnBorder-1 ? "yes" : "no"} lowerBorder={i%rowBorder==rowBorder-1 ? "yes" : "no"} topBorder={i==0 ? "yes" : "no"} leftBorder={j==0 ? "yes" : "no"} />
                                         })}
                                     </div>
                                 </>

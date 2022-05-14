@@ -67,7 +67,9 @@ export const Settings = () => {
                 onChange={handleDifficulty}
               >
                 <MenuItem value={"easy"}>Easy</MenuItem>
+                {dimension == 4 ? <></> :
                 <MenuItem value={"medium"}>Medium</MenuItem>
+                }
                 <MenuItem value={"hard"}>Hard</MenuItem>
               </Select>
             </FormControl>

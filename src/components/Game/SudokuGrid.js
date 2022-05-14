@@ -1,4 +1,4 @@
-export const SudokuGrid = (setsudokuNumbers, dimension) => {
+export const SudokuGrid = (setsudokuNumbersSol, setsudokuNumbers, dimension, difficulty) => {
 
     const grid1 = [
         [
@@ -83,16 +83,75 @@ export const SudokuGrid = (setsudokuNumbers, dimension) => {
             [6, 9, 3, 5, 2, 1, 7, 8, 4]
         ]
     ]
-
+    let temp
     let a = Math.floor(Math.random() * 3)
     if(dimension == 4){
-        setsudokuNumbers(grid1[a])
+        setsudokuNumbersSol(grid1[a])
+        temp = grid1[a]
     }
     else if(dimension == 6){
-        setsudokuNumbers(grid2[a])
+        setsudokuNumbersSol(grid2[a])
+        temp = grid2[a]
     }
-    else{
-        setsudokuNumbers(grid3[a])
+    else if (dimension == 9){
+        setsudokuNumbersSol(grid3[a])
+        temp = grid3[a]
+    }
+    
+    let finalGrid = []
+    for (let row = 0; row < temp.length; row++) {
+        let a = []
+        for (let column = 0; column < temp[row].length; column++) {
+            a.push(temp[row][column])
+        }
+        finalGrid.push(a)
     }
 
+    if(difficulty == "easy"){
+        if(dimension == 9){
+            createSudoku(1,3, finalGrid, dimension)
+        }
+        else if(dimension == 4){
+            createSudoku(1,1, finalGrid, dimension)
+        }
+        else if(dimension == 6){
+            createSudoku(1, 2, finalGrid, dimension)
+        }
+    }
+    else if(difficulty == "medium"){
+        if(dimension == 9){
+            createSudoku(3,5, finalGrid, dimension)
+        }
+        else if(dimension == 6){
+            createSudoku(1,3, finalGrid, dimension)
+        }
+    }
+    else if(difficulty == "hard"){
+        if(dimension == 9){
+            createSudoku(4,7, finalGrid, dimension)
+        }
+        else if(dimension == 4){
+            createSudoku(1,2, finalGrid, dimension)
+        }
+        else if(dimension == 6){
+            createSudoku(2,4, finalGrid, dimension)
+        }
+
+    }
+    setsudokuNumbers(finalGrid)
+    
+}
+
+
+var createSudoku = function(min, max, finalGrid, dimension){
+    for (let row = 0; row < dimension; row++) {   
+        let b = Math.floor(Math.random() * (max-min+1)) + min
+        for (let index = 0; index <= b; index++) {
+            let a = Math.floor(Math.random() * dimension)
+            while(finalGrid[row][a] == 0){
+                a = Math.floor(Math.random() * dimension)
+            }
+            finalGrid[row][a] = 0
+        }
+    }
 }
