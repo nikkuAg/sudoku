@@ -1,0 +1,39 @@
+.ux-buttons{
+    display: flex;
+    flex-direction: column;
+}
+.input-box{
+    margin: 1rem 2rem; 
+    padding: 0.5rem;
+    height: fit-content;
+    width: fit-content;
+    border: 2px solid black;
+}
+.input-buttons{
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+}
+.input-button{
+    width: 3rem;
+    height: 3rem;
+    font-size: 2rem !important;
+    margin: 0.5rem !important;
+}
+.extra-buttons{
+    margin: 0.5rem;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.extra-button{
+    margin: 0.2rem !important;
+}
+.score{
+    font-size: 1.5rem !important;
+    height: fit-content;
+    width: fit-content;
+    border: 1px solid rgba(25, 118, 210, 0.5) !important;
+    color: #1976d2 !important;
+    margin-bottom: 0px;
+}

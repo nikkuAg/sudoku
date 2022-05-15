@@ -14,7 +14,9 @@
 }
 .sudoku{
     border: 0.15rem solid black;
-    margin: 2rem;
+    margin: 1rem 2rem;
+    margin-bottom: 0px;
+    height: fit-content;
 }
 .row{
     display: flex;
@@ -47,5 +49,9 @@
     border-left-width: 3px ;
 }
 .input:hover,.click{
-    background-color: rgb(187, 222, 251);;
+    background-color: rgba(25, 118, 210, 0.5);
+}
+.game-container{
+    display: flex !important;
+    justify-content: center;
 }
