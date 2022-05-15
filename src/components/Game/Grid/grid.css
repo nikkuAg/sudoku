@@ -5,7 +5,12 @@
 }
 .css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input{
     text-align: center;
+    font-size: 2rem !important;
     padding: 0px !important;
+    cursor: pointer;
+}
+.css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input.Mui-disabled{
+    -webkit-text-fill-color: black !important;
 }
 .sudoku{
     border: 0.15rem solid black;
@@ -23,7 +28,9 @@
 }
 .input>form>div{
     margin: 0px;
+    width: auto;
 }
+
 #form-box>div>div>fieldset{
     border-color: black;
 }
@@ -38,4 +45,7 @@
 }
 .add-leftborder>div>div>fieldset{
     border-left-width: 3px ;
+}
+.input:hover,.click{
+    background-color: rgb(187, 222, 251);;
 }

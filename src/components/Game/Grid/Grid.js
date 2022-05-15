@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { SudokuGrid } from '../SudokuGrid'
+import { SudokuGrid } from './SudokuGrid'
 import LoadingButton from '@mui/lab/LoadingButton'
 import { InputBox } from './InputBox'
 import './grid.css'

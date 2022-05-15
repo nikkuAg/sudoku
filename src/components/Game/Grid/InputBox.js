@@ -10,7 +10,7 @@ export const InputBox = ({value, border, lowerBorder, topBorder, leftBorder}) =>
     const myclass = temp1 + " " + temp2 + " " + temp3 + " " + temp4
     
   return (
-    <div className="input">
+    <div className={value != null ? "filled input" : "not-filled input"}>
         <Box
             component="form"
             sx={{'& > :not(style)': { m: 1, width: '25ch' },}}
@@ -19,7 +19,7 @@ export const InputBox = ({value, border, lowerBorder, topBorder, leftBorder}) =>
             id="form-box"
             className={myclass}
         >
-            <TextField id="input-box" value={value} />
+            <TextField id="input-box" value={value} disabled={value != null ? true : false} />
         </Box>
     </div>
   )
