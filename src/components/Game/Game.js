@@ -20,7 +20,12 @@ export const Game = () => {
     const [row, setrow] = useState(-1)
     const [column, setcolumn] = useState(-1)
     const [validateSudoku, setvalidateSudoku] = useState([])
+    const [sudoku, setsudoku] = useState([])
+    const [score, setscore] = useState(0)
+    const [scoreTable, setscoreTable] = useState([])
+    
 
+    
     const handleClose = () => {
       setopen(false)
     }
@@ -33,25 +38,25 @@ export const Game = () => {
         :
         <div className='extra-buttons'>                
           <Button variant="outlined" className="extra-button score" disabled startIcon={<ScoreboardIcon />}>
-              Your Score : {100}
+              Your Score : {score}
           </Button>
         </div>
       }
       <Container className="game-container">
-        <Grid dimension={grid} difficulty={difficulty} loading={setloading} sudoku={setvalidateSudoku} setrow={setrow} setcolumn={setcolumn} />
+        <Grid dimension={grid} difficulty={difficulty} loading={setloading} sudoku={setvalidateSudoku} setsudoku={setsudoku} setrow={setrow} setcolumn={setcolumn} />
         {loading ? 
           <>
             <LoadingButton loading />
           </>
         :
           <>
-            <Input dimension={grid} setopen={setopen} setmessage={setmessage} setseverity={setseverity} validate={validateSudoku} row={row} column={column} />
+            <Input dimension={grid} setopen={setopen} setmessage={setmessage} setseverity={setseverity} validate={validateSudoku} row={row} column={column} sudoku={sudoku} score={score} setscore={setscore} scoreTable={scoreTable} setscoreTable={setscoreTable} />
           </>
         }
       </Container>
       <Snackbar
         open={open}
-        autoHideDuration={3000}
+        autoHideDuration={1000}
         onClose={handleClose}
         >
           <Alert onClose={handleClose} severity={severity}>{message}</Alert>

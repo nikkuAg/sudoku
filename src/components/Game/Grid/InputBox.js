@@ -8,7 +8,7 @@ export const InputBox = ({value, border, lowerBorder, topBorder, leftBorder, key
     const temp3 = topBorder=="yes" ? "add-topborder" : ""
     const temp4 = leftBorder=="yes" ? "add-leftborder" : ""
     const myclass = temp1 + " " + temp2 + " " + temp3 + " " + temp4
-
+    // const myError = false
     const [input, setinput] = useState()
 
     const cellClicked = (event) => {

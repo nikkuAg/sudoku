@@ -40,3 +40,6 @@
 #input-filled{
     -webkit-text-fill-color: #1976d2 !important;
 }
+#input-filled-error{
+    -webkit-text-fill-color: #d21919 !important;
+}

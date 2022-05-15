@@ -4,7 +4,7 @@ import LoadingButton from '@mui/lab/LoadingButton'
 import { InputBox } from './InputBox'
 import './grid.css'
 
-export const Grid = ({dimension, difficulty, loading, sudoku, setrow, setcolumn}) => {
+export const Grid = ({dimension, difficulty, loading, sudoku, setsudoku, setrow, setcolumn}) => {
     const [sudokuNumbersSol, setsudokuNumbersSol] = useState([])
     const [sudokuNumbers, setsudokuNumbers] = useState([])
     
@@ -17,6 +17,7 @@ export const Grid = ({dimension, difficulty, loading, sudoku, setrow, setcolumn}
       if(sudokuNumbers.length != 0 ){
           loading(false)
           sudoku(sudokuNumbersSol)
+          setsudoku(sudokuNumbers)
       }
       else{
           loading(true)
