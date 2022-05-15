@@ -42,6 +42,29 @@ export const Input = ({dimension, setopen, setmessage, setseverity, validate, ro
             setOpen(false)
     };
 
+    const clearClick = () => {
+        const element = document.getElementsByClassName("selected")
+        if(element.length == 0){
+            setopen(true)
+            setmessage("No cell selected!!")
+            setseverity("error")
+        }        
+        else if (element[0].value != "" && element[0].id != "input-filled" && element[0].id != "input-filled-error") {
+            setopen(true)
+            setmessage("Cannot delete this value!!")
+            setseverity("info")
+        }
+        else if(element[0].value == ""){
+            setopen(true)
+            setmessage("This cell is already empty!!")
+            setseverity("warning")
+        }
+        else{
+            element[0].value = ""
+            sudoku[row][column] = 0
+        }
+    }
+
 
     return (
         <div className='input-box'>
@@ -51,7 +74,7 @@ export const Input = ({dimension, setopen, setmessage, setseverity, validate, ro
                 })}                
             </div>
             <div className='extra-buttons'>
-                <Button variant="outlined" className="extra-button" color="error" endIcon={<DeleteIcon />}>
+                <Button variant="outlined" className="extra-button" color="error" endIcon={<DeleteIcon />} onClick={clearClick}>
                     Clear
                 </Button>
                 <Button variant="outlined" className="extra-button" color="success" endIcon={<DoneAllIcon />} onClick={submit}>
