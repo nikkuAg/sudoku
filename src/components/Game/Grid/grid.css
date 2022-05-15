@@ -13,7 +13,8 @@
     -webkit-text-fill-color: black !important;
 }
 .sudoku{
-    border: 0.15rem solid black;
+    border: 0rem solid;
+    border-top: 0.05rem solid black;
     margin: 1rem 2rem;
     margin-bottom: 0px;
     height: fit-content;
