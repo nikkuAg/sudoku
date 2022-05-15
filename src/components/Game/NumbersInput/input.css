@@ -37,3 +37,6 @@
     color: #1976d2 !important;
     margin-bottom: 0px;
 }
+#input-filled{
+    -webkit-text-fill-color: #1976d2 !important;
+}
