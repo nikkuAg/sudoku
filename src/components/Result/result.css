@@ -1,0 +1,18 @@
+.css-1jbbcbn-MuiDataGrid-columnHeaderTitle{
+    font-weight:bold;
+    font-size: 1.5rem;
+    text-align: center;
+}
+.MuiDataGrid-cell{
+    flex-wrap: wrap;
+    white-space: normal !important;
+    font-size: 0.8rem;
+    overflow: visible;
+}
+.css-1xy1myn-MuiDataGrid-root{
+    padding: 0.8rem !important;
+}
+.result{
+    display: flex;
+    justify-content: center;
+}

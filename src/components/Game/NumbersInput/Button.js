@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button } from '@mui/material'
 
-export const InputButton = ({ value, setopen, setmessage, setseverity, validate, row, column, sudoku, score, setscore, scoreTable, setscoreTable }) => {
+export const InputButton = ({ value, setopen, setmessage, setseverity, validate, row, column, sudoku, score, setscore, scoreTable, setscoreTable, setsubmit }) => {
 
   let code = 0
   let myscore = 0
@@ -16,12 +16,21 @@ export const InputButton = ({ value, setopen, setmessage, setseverity, validate,
     else if (element[0].value != "" && element[0].id != "input-filled" && element[0].id != "input-filled-error") {
       setopen(true)
       setmessage("Changing this value is not allowed!!")
-      setseverity("warning")
+      setseverity("info")
     }
     else {
       element[0].setAttribute('id', 'input-filled')
       element[0].value = value
       findError(element[0])
+    }
+
+    
+    const check = sudoku.findIndex(row => (row.includes(0)))
+    if(check == -1){
+      setsubmit(true)
+    }
+    else{
+      setsubmit(false)
     }
   }
 

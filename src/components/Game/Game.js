@@ -8,7 +8,7 @@ import LoadingButton from '@mui/lab/LoadingButton'
 import ScoreboardIcon from '@mui/icons-material/Scoreboard';
 import { Alert, Button, Snackbar } from '@mui/material'
 
-export const Game = () => {
+export const Game = ({setsudokuResult}) => {
     let param = useParams()
     const grid = param.grid
     const difficulty = param.diff
@@ -23,8 +23,8 @@ export const Game = () => {
     const [sudoku, setsudoku] = useState([])
     const [score, setscore] = useState(0)
     const [scoreTable, setscoreTable] = useState([])
-    
 
+    console.log(scoreTable)
     
     const handleClose = () => {
       setopen(false)
@@ -50,13 +50,13 @@ export const Game = () => {
           </>
         :
           <>
-            <Input dimension={grid} setopen={setopen} setmessage={setmessage} setseverity={setseverity} validate={validateSudoku} row={row} column={column} sudoku={sudoku} score={score} setscore={setscore} scoreTable={scoreTable} setscoreTable={setscoreTable} />
+            <Input dimension={grid} setopen={setopen} setmessage={setmessage} setseverity={setseverity} validate={validateSudoku} row={row} column={column} sudoku={sudoku} score={score} setscore={setscore} scoreTable={scoreTable} setscoreTable={setscoreTable} sudokuResult={setsudokuResult} />
           </>
         }
       </Container>
       <Snackbar
         open={open}
-        autoHideDuration={1000}
+        autoHideDuration={1800}
         onClose={handleClose}
         >
           <Alert onClose={handleClose} severity={severity}>{message}</Alert>

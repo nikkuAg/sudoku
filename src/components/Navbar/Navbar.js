@@ -16,9 +16,6 @@ export const Navbar = () => {
           <h1 onClick={home} className='home'>
               Sudoku
           </h1>
-          <div className='rules'>
-              Rules
-          </div>
       </div>
       <Divider />
     </>
