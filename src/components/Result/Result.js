@@ -48,8 +48,6 @@ export const Result = ({sudokuResult}) => {
         rows.push(element)
     }
 
-    console.log(score)
-
   return (
     <div>
         <Navbar />

@@ -23,8 +23,6 @@ export const Game = ({setsudokuResult}) => {
     const [sudoku, setsudoku] = useState([])
     const [score, setscore] = useState(0)
     const [scoreTable, setscoreTable] = useState([])
-
-    console.log(scoreTable)
     
     const handleClose = () => {
       setopen(false)
