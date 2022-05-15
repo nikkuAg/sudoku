@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { BrowserRouter as Router, Routes, 
+import { HashRouter as Router, Routes, 
   Route} from "react-router-dom";
 import { Game } from "./components/Game/Game";
 import { Home } from "./components/Home";
